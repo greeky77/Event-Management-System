@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#f8f7f3" />
+  <meta name="description" content="Find your people, your next big idea, and your next unforgettable experience with Gatherly." />
+  <title>Gatherly — Find your next thing</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="Gatherly home"><span class="brand-mark">g</span>gatherly<span class="brand-dot">.</span></a>
+    <nav class="desktop-nav" aria-label="Main navigation">
+      <a class="nav-link active" href="#events">Discover</a>
+      <a class="nav-link" href="#about">About us</a>
+      <a class="nav-link" href="#footer">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-button theme-toggle" aria-label="Switch to dark mode" title="Toggle theme"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.2 15.4A8.5 8.5 0 0 1 8.6 3.8 8.5 8.5 0 1 0 20.2 15.4Z"/></svg></button>
+      <button class="avatar-button" id="myTickets" aria-label="View my tickets"><span>JD</span></button>
+      <button class="mobile-menu" aria-label="Open navigation" aria-expanded="false"><span></span><span></span></button>
+    </div>
+  </header>
+
+  <main id="home">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="eyebrow-line"></span> MOMENTS THAT MOVE YOU <span class="sparkle">✳</span></div>
+        <h1 id="hero-title">Find your<br />next <span>thing.</span></h1>
+        <p class="hero-description">Good people. Great ideas. Unforgettable experiences. Your next favorite moment is just around the corner.</p>
+        <div class="hero-actions">
+          <a class="button button-dark" href="#events">Explore events <span aria-hidden="true">↗</span></a>
+          <div class="attendee-proof"><div class="avatar-stack"><img src="https://i.pravatar.cc/80?img=47" alt=""/><img src="https://i.pravatar.cc/80?img=12" alt=""/><img src="https://i.pravatar.cc/80?img=32" alt=""/></div><div><strong>12k+</strong><small>happy attendees</small></div></div>
+        </div>
+        <div class="hero-footnote"><span class="footnote-dot"></span> BIG IDEAS, BETTER COMPANY</div>
+      </div>
+      <div class="hero-art" aria-label="People gathering at an outdoor music event">
+        <img class="hero-image" src="https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&w=1500&q=85" alt="Friends celebrating together at a live outdoor event" />
+        <div class="hero-image-wash"></div>
+        <div class="floating-date"><span class="date-month">NOV</span><strong>21</strong><span class="date-day">FRIDAY</span></div>
+        <div class="hero-note"><span class="note-star">✳</span><span>MAKE ROOM<br />FOR WONDER</span></div>
+        <div class="art-caption"><span>01 / 04</span><span>✳&nbsp; EXPERIENCES FOR THE CURIOUS</span></div>
+      </div>
+      <div class="hero-scroll" aria-hidden="true"><span></span> SCROLL TO EXPLORE</div>
+    </section>
+
+    <section class="events-section" id="events" aria-labelledby="events-title">
+      <div class="section-topline"><span class="eyebrow"><span class="eyebrow-line"></span> THE GOOD STUFF</span><span class="event-count"><b id="eventCount">06</b> EVENTS TO MAKE A DAY OF IT</span></div>
+      <div class="section-heading-row"><div><h2 id="events-title">Find your <span>people.</span></h2><p class="section-subtitle">A little inspiration for your calendar.</p></div><a href="#all-events" class="text-link">All events <span>↗</span></a></div>
+      <div class="discovery-bar">
+        <label class="search-box"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 4.2 4.2"/></svg><input id="eventSearch" type="search" placeholder="Search events, places, vibes..." aria-label="Search events" /><kbd>⌘ K</kbd></label>
+        <div class="category-filters" role="group" aria-label="Filter events by category"><button class="filter-chip active" data-category="All">All <span>06</span></button><button class="filter-chip" data-category="Music">Music</button><button class="filter-chip" data-category="Culture">Culture</button><button class="filter-chip" data-category="Wellness">Wellness</button><button class="filter-chip" data-category="Ideas">Ideas</button><button class="filter-chip" data-category="Food">Food</button></div>
+        <button class="sort-button" id="sortButton"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M7 12h10m-7 6h4"/></svg> Soonest <span>⌄</span></button>
+      </div>
+      <div class="event-grid" id="eventGrid" aria-live="polite"></div>
+      <div class="empty-state" id="emptyState" hidden><span>✳</span><h3>No events found</h3><p>Try a different search or category.</p><button class="button button-dark" id="clearFilters">Clear filters</button></div>
+      <div class="load-more-wrap"><button class="load-more" id="loadMore">That’s everything <span>✳</span></button></div>
+    </section>
+
+    <section class="about-strip" id="about"><div class="about-stamp">G<span>✳</span></div><div class="about-copy"><span class="eyebrow">A LITTLE MORE HUMAN</span><h2>Life’s better<br />when we <em>show up.</em></h2></div><p>We bring people together around the things that make us feel alive. No awkward networking. No endless scrolling. Just good stuff, with good people.</p><a href="#events" class="round-arrow" aria-label="Discover events">↗</a></section>
+    <section class="newsletter"><div><span class="eyebrow">A NOTE FROM US</span><h2>Good things, <span>occasionally.</span></h2></div><form id="newsletterForm" class="newsletter-form"><label class="visually-hidden" for="newsletterEmail">Your email address</label><input id="newsletterEmail" type="email" placeholder="Your email address" required /><button aria-label="Subscribe">↗</button><small id="newsletterMessage">No noise. Just the occasional good thing.</small></form></section>
+  </main>
+
+  <footer id="footer"><a class="brand footer-brand" href="#home"><span class="brand-mark">g</span>gatherly<span class="brand-dot">.</span></a><span>Made for showing up. © 2025 Gatherly</span><div><a href="#events">Instagram ↗</a><a href="mailto:hello@gatherly.events">Say hello ↗</a></div></footer>
+
+  <dialog class="event-dialog" id="eventDialog" aria-labelledby="dialogTitle"><button class="dialog-close" aria-label="Close event details">×</button><div id="dialogContent"></div></dialog>
+  <dialog class="tickets-dialog" id="ticketsDialog" aria-labelledby="ticketsTitle"><button class="dialog-close" aria-label="Close my tickets">×</button><div id="ticketsContent"></div></dialog>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
